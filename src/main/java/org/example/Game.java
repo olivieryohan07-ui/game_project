@@ -132,23 +132,7 @@ public class Game extends JPanel implements Runnable {
         super.paintComponent(g);
 
         if (!hasStarted) {
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, WIDTH, HEIGHT);
-            g.setColor(Color.WHITE);
-            g.setFont(new Font("Arial", Font.BOLD, 30));
-            g.drawString("CRAZY ROAD", 150, 100);
-            g.setFont(new Font("Arial", Font.PLAIN, 15));
-            g.drawString("SPACE TO START", 180, 150);
-            g.drawString("Game Rules:",50, 200);
-            g.drawString("Guide your character from the bottom of the screen to the safety",50, 230);
-            g.drawString("zone at the top without getting hit by the oncoming traffic",50, 250);
-            g.drawString("Controls: ",50, 280);
-            g.drawString("SPACE: Start the game from the main menu.",50, 310);
-            g.drawString("ARROW KEYS: Move your character Up, Down, Left, or Right.",50, 330);
-            g.drawString("'R' KEY: Restart the game instantly after a Game Over.",50, 350);
-            g.drawString("Dynamic Difficulty: Car speed increases after each level.",50, 380);
-            g.drawString("Live Scoring: Real-time level tracking.",50, 400);
-            g.drawString("High Score: Best Score saved to encourage replayability.",50, 420);
+            initMenu(g);
         } else {
             //Paint a finish line
             g.setColor(Color.WHITE);
@@ -181,6 +165,26 @@ public class Game extends JPanel implements Runnable {
                 g.drawString("PRESS 'R' TO PLAY AGAIN", 130, 350);
             }
         }
+    }
+
+    private void initMenu(Graphics g){
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, WIDTH, HEIGHT);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Arial", Font.BOLD, 30));
+        g.drawString("CRAZY ROAD", 150, 100);
+        g.setFont(new Font("Arial", Font.PLAIN, 15));
+        g.drawString("SPACE TO START", 180, 150);
+        g.drawString("Game Rules:",50, 200);
+        g.drawString("Guide your character from the bottom of the screen to the safety",50, 230);
+        g.drawString("zone at the top without getting hit by the oncoming traffic",50, 250);
+        g.drawString("Controls: ",50, 280);
+        g.drawString("SPACE: Start the game from the main menu.",50, 310);
+        g.drawString("ARROW KEYS: Move your character Up, Down, Left, or Right.",50, 330);
+        g.drawString("'R' KEY: Restart the game instantly after a Game Over.",50, 350);
+        g.drawString("Dynamic Difficulty: Car speed increases after each level.",50, 380);
+        g.drawString("Live Scoring: Real-time level tracking.",50, 400);
+        g.drawString("High Score: Best Score saved to encourage replayability.",50, 420);
     }
 
     public boolean isHasStarted() {
